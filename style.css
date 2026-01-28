@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+ box-sizing: border-box;
+}
+body{
+    margin-top: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+.cityInput{
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 2rem;
+    padding: 12px;
+    border: 2px solid rgba(43, 41, 41, 0.836);
+    border-radius: 10px;
+    width: 300px;
+}
+.weatherForm{
+    margin: 10px;
+}
+button[type="submit"]{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgba(0, 162, 255, 0.664);
+    padding: 1rem 20px;
+    border: 2px solid rgba(0, 0, 0, 0.356);
+    border-radius: 10px;
+    cursor: pointer;
+    min-width: 190px;
+    min-height: 60px;
+}
+button[type="submit"]:hover{
+  background-color: rgba(0, 162, 255, 0.452);
+}
+.card{ 
+    background: linear-gradient(180deg, hsl(210, 100%, 75%),hsl(40, 100% , 70%), transparent);
+    margin-top: 2rem;
+    padding: 2.5rem;
+    box-shadow: 2px 2px 8px hsla(0, 0%, 0%, 0.651);
+    border: 1px solid rgba(0, 0, 0, 0.295);
+    border-radius: 15px;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 65px;
+    min-width: 350px;
+    margin-bottom: 3rem;
+}
+h1{ 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+}
+p{
+    font-size: 1.5rem;
+    margin: 3px 0;
+}
+.cityDisplay, .tempDisplay{
+    font-weight: bold;
+    margin-bottom: 25px;
+    color:rgba(14, 13, 13, 0.685);
+    font-size: 2.5rem;
+}
+.humidityDisplay{
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.descDisplay, .pressureDisplay, .speedDisplay{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.weatherEmoji{
+    font-size: 6rem;
+    margin: 0;
+}
+.weatherError{
+    font-weight: bold;
+    font-size: 2.5rem;
+    color:rgba(0, 0, 0, 0.71);
+}
+.themeToggle{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 999;
+    font-size: 1.5rem;
+    padding: 8px 10px;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 230, 2, 0.849);
+    background: rgba(3, 3, 3, 0.356);
+    cursor: pointer;
+}
+.themeToggle:hover{
+    opacity:0.96
+}
+
+body.dark-mode{
+    background-color: #0f1720;
+    color: #e6eef6;
+}
+.dark-mode .card{
+    background: linear-gradient(180deg, rgba(57, 89, 119, 0.9), rgba(20,30,40,0.9));
+    box-shadow: 2px 2px 7px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.233);
+}
+.dark-mode .cityDisplay, .dark-mode .tempDisplay{
+    color: #e6eef6;
+}
+.dark-mode .descDisplay, .dark-mode .pressureDisplay, .dark-mode .speedDisplay{
+    color: #cfe6ff;
+}
+.dark-mode button[type="submit"]{
+    background-color: rgba(0, 162, 255, 0.4);
+    color: #fff;
+}
+.dark-mode .cityInput{
+    background-color: #0f1720;
+    color: #e6eef6;
+    border: #cfe6ff 2px solid;
+}
