@@ -471,10 +471,9 @@ function updateBackground(id, isDay) {
 
   if (bgImage) {
     mainContent.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${bgImage}')`;
-    mainContent.style.backgroundSize = '90% 90%';
+    mainContent.style.backgroundSize = 'cover';
     mainContent.style.backgroundPosition = 'center';
-    mainContent.style.backgroundRepeat = 'no-repeat';
-    mainContent.style.color = '#ffffff'; 
+    mainContent.style.backgroundRepeat = 'no-repeat'; 
   }
 }
 
