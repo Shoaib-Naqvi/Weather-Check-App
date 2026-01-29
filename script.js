@@ -390,6 +390,7 @@ async function getQuickTemp(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${state.unit}&appid=${API_KEY}`;
     const res = await fetch(url);
     const data = await res.json();
+    console.log(data);
     return data.main.temp;
   } catch {
     return '--';
@@ -454,26 +455,29 @@ function updateGauge(val) {
 }
 
 function updateBackground(id, isDay) {
-  const mainContent = document.querySelector('.main-content');
-  if (!mainContent) return;
+  const heroBg = document.getElementById('heroBg');
+  if (!heroBg) return;
 
   let bgImage = '';
 
-  if (id >= 200 && id < 300) bgImage = 'assets/bg-thunderstorm.png';
-  else if (id >= 300 && id < 600) bgImage = 'assets/bg-rainy.png';
+  if (id >= 200 && id < 300) bgImage = 'assets/Thenderstorm-BackG.jpg';
+  else if (id >= 300 && id < 500) bgImage = 'assets/Drizzle-BackG.jpg';
+  else if (id >= 500 && id < 600) bgImage = 'assets/Rain-BackG.jpg';
   else if (id >= 600 && id < 700) bgImage = 'assets/bg-snowy.png';
   else if (id >= 700 && id < 800) bgImage = 'assets/bg-atmosphere.png';
   else if (id === 800) {
-    bgImage = isDay ? 'assets/bg-clear.png' : 'assets/bg-atmosphere.png';
+    bgImage = isDay ? 'assets/clear-BackG.jpg' : 'assets/clear-night.jpg';
   } else if (id > 800) {
-    bgImage = 'assets/bg-cloudy.png';
+    bgImage = 'assets/Cloudy-BackG.jpg';
   }
 
   if (bgImage) {
-    mainContent.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${bgImage}')`;
-    mainContent.style.backgroundSize = 'cover';
-    mainContent.style.backgroundPosition = 'center';
-    mainContent.style.backgroundRepeat = 'no-repeat'; 
+    heroBg.style.backgroundImage = `url('${bgImage}')`;
+    // Force re-trigger animation by resetting opacity
+    heroBg.style.opacity = '0';
+    setTimeout(() => {
+      heroBg.style.opacity = '1';
+    }, 50);
   }
 }
 

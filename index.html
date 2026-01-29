@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Leaflet for Map -->
+    <!--Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -43,7 +43,6 @@
 
         <!-- Content Area -->
         <div class="content-wrapper">
-
             <!-- Dashboard-->
             <div id="section-dashboard" class="content-section active">
                 <main class="main-content">
@@ -62,17 +61,20 @@
                     </header>
 
                     <!-- Hero Section -->
-                    <div class="dashboard-hero">
-                        <div class="hero-text">
-                            <h1 id="cityDisplay">--</h1>
-                            <p id="dateTimeDisplay">--</p>
-                            <div class="hero-temp">
-                                <h2 id="tempDisplay">--°</h2>
+                    <div class="hero-section-container">
+                        <div id="heroBg" class="hero-bg"></div>
+                        <div class="dashboard-hero">
+                            <div class="hero-text">
+                                <h1 id="cityDisplay">--</h1>
+                                <p id="dateTimeDisplay">--</p>
+                                <div class="hero-temp">
+                                    <h2 id="tempDisplay">--°</h2>
+                                </div>
+                                <p id="descDisplay" class="weather-desc">--</p>
                             </div>
-                            <p id="descDisplay" class="weather-desc">--</p>
-                        </div>
-                        <div class="hero-image">
-                            <img src="assets/3d-sun.png" id="weatherIcon3D" alt="Weather">
+                            <div class="hero-image">
+                                <img src="assets/3d-sun.png" id="weatherIcon3D" alt="Weather">
+                            </div>
                         </div>
                     </div>
 
@@ -103,7 +105,7 @@
                                     <img src="assets/wind.png" alt="Wind" style="width: 50px;">
                                 </div>
                             </div>
-                            <!-- Sunrise/Sunset -->
+                            <!-- Sunrise And Sunset -->
                             <div class="highlight-card">
                                 <h4>Sunrise & Sunset</h4>
                                 <div class="sun-times">
@@ -156,13 +158,12 @@
                     </div>
                 </main>
 
-                <!-- Right Panel (Forecast) -->
+                <!-- Right Panel -->
                 <aside class="right-panel">
-                    <!-- Hourly Forecast -->
+                    <!-- Hourly -->
                     <div class="hourly-section">
                         <h3>Hourly Forecast</h3>
                         <div id="hourlyList" class="hourly-list">
-                            <!-- Injected via JS -->
                         </div>
                     </div>
 
@@ -170,13 +171,12 @@
                     <div class="forecast-section">
                         <h3>Weekly Forecast</h3>
                         <div id="forecastList" class="forecast-list">
-                            <!-- Injected via JS -->
                         </div>
                     </div>
                 </aside>
             </div>
 
-            <!-- SECTION: Map -->
+            <!-- Map -->
             <div id="section-map" class="content-section">
                 <div class="section-header">
                     <h2>Interactive Map</h2>
@@ -184,29 +184,27 @@
                 <div id="map" class="map-container"></div>
             </div>
 
-            <!-- SECTION: Saved Locations -->
+            <!-- Saved Locations -->
             <div id="section-saved" class="content-section">
                 <div class="section-header">
                     <h2>Saved Locations</h2>
                     <button id="clearSavedBtn" class="nav-btn" style="width:auto; padding: 0 15px;">Clear All</button>
                 </div>
                 <div id="savedList" class="saved-grid">
-                    <!-- Injected via JS -->
                     <p class="empty-msg">No saved locations yet.</p>
                 </div>
             </div>
 
-            <!-- SECTION: Calendar -->
+            <!-- Calendar -->
             <div id="section-calendar" class="content-section">
                 <div class="section-header">
                     <h2>7-Day Forecast Calendar</h2>
                 </div>
                 <div id="calendarGrid" class="calendar-grid">
-                    <!-- Injected via JS -->
                 </div>
             </div>
 
-            <!-- SECTION: Settings -->
+            <!-- Settings -->
             <div id="section-settings" class="content-section">
                 <div class="section-header">
                     <h2>Settings</h2>
@@ -229,11 +227,11 @@
                 </div>
             </div>
 
-        </div> <!-- End Content Wrapper -->
+        </div>
 
     </div>
 
-    <!-- Feedback UI -->
+    <!-- Feedback -->
     <div id="loader" class="loader-overlay hidden">
         <div class="spinner"></div>
     </div>
