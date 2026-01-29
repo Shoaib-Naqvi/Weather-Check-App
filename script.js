@@ -473,11 +473,10 @@ function updateBackground(id, isDay) {
 
   if (bgImage) {
     heroBg.style.backgroundImage = `url('${bgImage}')`;
-    // Force re-trigger animation by resetting opacity
     heroBg.style.opacity = '0';
     setTimeout(() => {
-      heroBg.style.opacity = '1';
-    }, 50);
+      heroBg.style.opacity = '1'; 
+    }, 100); 
   }
 }
 
