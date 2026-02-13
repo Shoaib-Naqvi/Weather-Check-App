@@ -1,5 +1,5 @@
 
-const API_KEY = "9ff2e4ca99981cadaac34e33559e7d91";
+const API_KEY = "";
 
 const state = {
   currentCity: "Rawalpindi",
