@@ -1,0 +1,16 @@
+{
+  "name": "weather-check-app",
+  "version": "1.0.0",
+  "description": "Production-ready weather dashboard with secure Netlify Functions.",
+  "main": "index.html",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
